@@ -295,7 +295,7 @@ class Model {
     }
 
     // If we are just after the "from" keyword, autocomplete the sobject name
-    if (query.substring(0, selStart).match(/(^|\s)from\s*$/)) {
+    if (query.toLowerCase().substring(0, selStart).match(/(^|\s)from\s*$/)) {
       let {globalStatus, globalDescribe} = vm.describeInfo.describeGlobal(useToolingApi);
       if (!globalDescribe) {
         switch (globalStatus) {
